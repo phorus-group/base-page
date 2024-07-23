@@ -1,0 +1,75 @@
+{
+  "name": "test-page",
+  "author": "Phorus Group",
+  "description": "Phorus Group test page",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "engines": {
+    "npm": "please-use-yarn"
+  },
+  "resolutions": {
+    "webpack": "^5"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "next-sitemap",
+    "start": "next start",
+    "lint": "eslint **/*.ts* --fix --no-error-on-unmatched-pattern",
+    "storybook": "storybook dev -p 6006",
+    "build:storybook": "yarn storybook && test-storybook",
+    "test:storybook": "test-storybook",
+    "test:unit": "jest --ci --json --outputFile=test/.jest-test-results.json"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "yarn lint"
+    ]
+  },
+  "jest-junit": {
+    "outputDirectory": "./test/.coverage",
+    "outputName": "junit.xml"
+  },
+  "dependencies": {
+    "next": "14.2.3",
+    "sharp": "0.33.4",
+    "next-sitemap": "4.2.3",
+    "@emotion/react": "11.11.4",
+    "@emotion/styled": "11.11.5",
+    "axe-playwright": "2.0.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "storybook": "8.1.6",
+    "@chromatic-com/storybook": "1.5.0",
+    "@storybook/addon-essentials": "8.1.5",
+    "@storybook/addon-interactions": "8.1.5",
+    "@storybook/addon-links": "8.1.5",
+    "@storybook/addon-onboarding": "8.1.5",
+    "@storybook/addon-a11y": "8.1.5",
+    "@storybook/blocks": "8.1.5",
+    "@storybook/nextjs": "8.1.5",
+    "@storybook/react": "8.1.5",
+    "@storybook/test": "8.1.5",
+    "@types/node": "20.11.5",
+    "@types/react": "18.2.48",
+    "@types/react-dom": "18.2.18",
+    "typescript": "5.4.5",
+    "eslint": "8.56.0",
+    "eslint-scope": "8.0.1",
+    "eslint-config-next": "14.2.1",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-prettier": "5.1.3",
+    "eslint-plugin-react": "7.34.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-storybook": "0.8.0",
+    "eslint-plugin-unused-imports": "3.1.0",
+    "@next/eslint-plugin-next": "14.2.1",
+    "@typescript-eslint/eslint-plugin": "7.7.0",
+    "@typescript-eslint/parser": "7.7.0",
+    "husky": "9.0.11",
+    "lint-staged": "15.2.5"
+  }
+}
